@@ -5,6 +5,7 @@
         public Brand(string name){
             Name = name;
         }
+        public Brand(){}
         public required string Name { get; set; }
 
     }

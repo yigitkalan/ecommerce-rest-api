@@ -18,7 +18,7 @@ public class PropertyConfiguration : IEntityTypeConfiguration<Property>
         };
 
         Property property2 = new Property{
-            Id = 1,
+            Id = 2,
             CategoryId = 4,
             Name = faker.Commerce.ProductMaterial(),
             Value = faker.Lorem.Word(),
@@ -26,7 +26,7 @@ public class PropertyConfiguration : IEntityTypeConfiguration<Property>
         };
 
         Property property3 = new Property{
-            Id = 1,
+            Id = 3,
             CategoryId = 3,
             Name = faker.Commerce.ProductMaterial(),
             Value = faker.Lorem.Word(),

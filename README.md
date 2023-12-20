@@ -1,1 +1,1 @@
-RESTful API with dotnet and onion architecture using CQRS for an example ecommercec platform.
+RESTful API with dotnet and onion architecture using CQRS for an example ecommerce platform.

@@ -3,7 +3,6 @@ using System;
 using Ecommerce.Persistance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
@@ -12,26 +11,22 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.Persistance.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231212104721_Init")]
+    [Migration("20231212124519_Init")]
     partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.5")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
-
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
 
             modelBuilder.Entity("CategoryProduct", b =>
                 {
                     b.Property<int>("CategoriesId")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("ProductsId")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("CategoriesId", "ProductsId");
 
@@ -44,20 +39,18 @@ namespace Ecommerce.Persistance.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CreatedTime")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -67,23 +60,23 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedTime = new DateTime(2023, 12, 12, 13, 47, 21, 248, DateTimeKind.Local).AddTicks(7236),
+                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(6075),
                             IsDeleted = false,
-                            Name = "Bogus.DataSets.Company"
+                            Name = "Yost Inc"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedTime = new DateTime(2023, 12, 12, 13, 47, 21, 248, DateTimeKind.Local).AddTicks(7242),
+                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(6515),
                             IsDeleted = false,
-                            Name = "Bogus.DataSets.Company"
+                            Name = "Gerhold - Lang"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedTime = new DateTime(2023, 12, 12, 13, 47, 21, 248, DateTimeKind.Local).AddTicks(7247),
+                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(6684),
                             IsDeleted = false,
-                            Name = "Bogus.DataSets.Company"
+                            Name = "King - Wisoky"
                         });
                 });
 
@@ -91,25 +84,23 @@ namespace Ecommerce.Persistance.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CreatedTime")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("ParentId")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("Priority")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -119,7 +110,7 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedTime = new DateTime(2023, 12, 12, 13, 47, 21, 249, DateTimeKind.Local).AddTicks(1003),
+                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9122),
                             IsDeleted = false,
                             Name = "Electronics",
                             ParentId = 0,
@@ -128,7 +119,7 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedTime = new DateTime(2023, 12, 12, 13, 47, 21, 249, DateTimeKind.Local).AddTicks(1012),
+                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9131),
                             IsDeleted = false,
                             Name = "Fashion",
                             ParentId = 0,
@@ -137,7 +128,7 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedTime = new DateTime(2023, 12, 12, 13, 47, 21, 249, DateTimeKind.Local).AddTicks(1008),
+                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9127),
                             IsDeleted = false,
                             Name = "Computer",
                             ParentId = 1,
@@ -146,7 +137,7 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedTime = new DateTime(2023, 12, 12, 13, 47, 21, 249, DateTimeKind.Local).AddTicks(1016),
+                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9135),
                             IsDeleted = false,
                             Name = "Women",
                             ParentId = 3,
@@ -158,32 +149,30 @@ namespace Ecommerce.Persistance.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("BrandId")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CreatedTime")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("TEXT");
 
                     b.Property<decimal>("Discount")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .HasColumnType("INTEGER");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -196,23 +185,23 @@ namespace Ecommerce.Persistance.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CreatedTime = new DateTime(2023, 12, 12, 13, 47, 21, 251, DateTimeKind.Local).AddTicks(3732),
+                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 151, DateTimeKind.Local).AddTicks(1566),
                             Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Discount = 2.972735805115760m,
+                            Discount = 18.412722498041440m,
                             IsDeleted = false,
-                            Price = 947.29650941157400m,
-                            Title = "Incredible Frozen Shoes"
+                            Price = 226.403504889305500m,
+                            Title = "Practical Soft Shirt"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 3,
-                            CreatedTime = new DateTime(2023, 12, 12, 13, 47, 21, 251, DateTimeKind.Local).AddTicks(3766),
-                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                            Discount = 16.330300725868520m,
+                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 151, DateTimeKind.Local).AddTicks(1597),
+                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+                            Discount = 12.195370521915780m,
                             IsDeleted = false,
-                            Price = 198.318569400323200m,
-                            Title = "Handmade Concrete Chair"
+                            Price = 520.22360722191400m,
+                            Title = "Rustic Concrete Chair"
                         });
                 });
 
@@ -220,26 +209,24 @@ namespace Ecommerce.Persistance.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("CategoryId")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CreatedTime")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Value")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -252,28 +239,28 @@ namespace Ecommerce.Persistance.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedTime = new DateTime(2023, 12, 12, 13, 47, 21, 254, DateTimeKind.Local).AddTicks(418),
+                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 153, DateTimeKind.Local).AddTicks(3243),
                             IsDeleted = false,
-                            Name = "Granite",
-                            Value = "nobis"
+                            Name = "Battery Life",
+                            Value = "60 Hours"
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 4,
-                            CreatedTime = new DateTime(2023, 12, 12, 13, 47, 21, 254, DateTimeKind.Local).AddTicks(519),
+                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 153, DateTimeKind.Local).AddTicks(3314),
                             IsDeleted = true,
-                            Name = "Steel",
-                            Value = "tempora"
+                            Name = "Ram",
+                            Value = "60"
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 3,
-                            CreatedTime = new DateTime(2023, 12, 12, 13, 47, 21, 254, DateTimeKind.Local).AddTicks(534),
+                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 153, DateTimeKind.Local).AddTicks(3319),
                             IsDeleted = false,
-                            Name = "Metal",
-                            Value = "quia"
+                            Name = "Material",
+                            Value = "velit"
                         });
                 });
 

@@ -9,7 +9,7 @@ public static class Registration
     public static void AddPersistance(this IServiceCollection services, IConfiguration configuration){
         services.AddDbContext<AppDbContext>(options =>
         {
-            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+            options.UseSqlite(configuration.GetConnectionString("LiteConnection"));
         });
     }
 

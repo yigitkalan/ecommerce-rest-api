@@ -17,11 +17,11 @@ namespace Ecommerce.Persistance.Migrations
                 name: "Brands",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
-                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 256, nullable: false),
+                    CreatedTime = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -32,13 +32,13 @@ namespace Ecommerce.Persistance.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ParentId = table.Column<int>(type: "int", nullable: false),
-                    Priority = table.Column<int>(type: "int", nullable: false),
-                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: false),
+                    ParentId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Priority = table.Column<int>(type: "INTEGER", nullable: false),
+                    CreatedTime = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -49,15 +49,15 @@ namespace Ecommerce.Persistance.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BrandId = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Discount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Title = table.Column<string>(type: "TEXT", nullable: false),
+                    Description = table.Column<string>(type: "TEXT", nullable: false),
+                    BrandId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Price = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Discount = table.Column<decimal>(type: "TEXT", nullable: false),
+                    CreatedTime = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -74,13 +74,13 @@ namespace Ecommerce.Persistance.Migrations
                 name: "Properties",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Value = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false),
-                    CreatedTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: false),
+                    Value = table.Column<string>(type: "TEXT", nullable: false),
+                    CategoryId = table.Column<int>(type: "INTEGER", nullable: false),
+                    CreatedTime = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -97,8 +97,8 @@ namespace Ecommerce.Persistance.Migrations
                 name: "CategoryProduct",
                 columns: table => new
                 {
-                    CategoriesId = table.Column<int>(type: "int", nullable: false),
-                    ProductsId = table.Column<int>(type: "int", nullable: false)
+                    CategoriesId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ProductsId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -122,9 +122,9 @@ namespace Ecommerce.Persistance.Migrations
                 columns: new[] { "Id", "CreatedTime", "IsDeleted", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 12, 12, 13, 47, 21, 248, DateTimeKind.Local).AddTicks(7236), false, "Bogus.DataSets.Company" },
-                    { 2, new DateTime(2023, 12, 12, 13, 47, 21, 248, DateTimeKind.Local).AddTicks(7242), false, "Bogus.DataSets.Company" },
-                    { 3, new DateTime(2023, 12, 12, 13, 47, 21, 248, DateTimeKind.Local).AddTicks(7247), false, "Bogus.DataSets.Company" }
+                    { 1, new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(6075), false, "Yost Inc" },
+                    { 2, new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(6515), false, "Gerhold - Lang" },
+                    { 3, new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(6684), false, "King - Wisoky" }
                 });
 
             migrationBuilder.InsertData(
@@ -132,10 +132,10 @@ namespace Ecommerce.Persistance.Migrations
                 columns: new[] { "Id", "CreatedTime", "IsDeleted", "Name", "ParentId", "Priority" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 12, 12, 13, 47, 21, 249, DateTimeKind.Local).AddTicks(1003), false, "Electronics", 0, 1 },
-                    { 2, new DateTime(2023, 12, 12, 13, 47, 21, 249, DateTimeKind.Local).AddTicks(1008), false, "Computer", 1, 1 },
-                    { 3, new DateTime(2023, 12, 12, 13, 47, 21, 249, DateTimeKind.Local).AddTicks(1012), false, "Fashion", 0, 2 },
-                    { 4, new DateTime(2023, 12, 12, 13, 47, 21, 249, DateTimeKind.Local).AddTicks(1016), false, "Women", 3, 1 }
+                    { 1, new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9122), false, "Electronics", 0, 1 },
+                    { 2, new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9127), false, "Computer", 1, 1 },
+                    { 3, new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9131), false, "Fashion", 0, 2 },
+                    { 4, new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9135), false, "Women", 3, 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -143,8 +143,8 @@ namespace Ecommerce.Persistance.Migrations
                 columns: new[] { "Id", "BrandId", "CreatedTime", "Description", "Discount", "IsDeleted", "Price", "Title" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2023, 12, 12, 13, 47, 21, 251, DateTimeKind.Local).AddTicks(3732), "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support", 2.972735805115760m, false, 947.29650941157400m, "Incredible Frozen Shoes" },
-                    { 2, 3, new DateTime(2023, 12, 12, 13, 47, 21, 251, DateTimeKind.Local).AddTicks(3766), "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart", 16.330300725868520m, false, 198.318569400323200m, "Handmade Concrete Chair" }
+                    { 1, 1, new DateTime(2023, 12, 12, 15, 45, 19, 151, DateTimeKind.Local).AddTicks(1566), "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support", 18.412722498041440m, false, 226.403504889305500m, "Practical Soft Shirt" },
+                    { 2, 3, new DateTime(2023, 12, 12, 15, 45, 19, 151, DateTimeKind.Local).AddTicks(1597), "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients", 12.195370521915780m, false, 520.22360722191400m, "Rustic Concrete Chair" }
                 });
 
             migrationBuilder.InsertData(
@@ -152,9 +152,9 @@ namespace Ecommerce.Persistance.Migrations
                 columns: new[] { "Id", "CategoryId", "CreatedTime", "IsDeleted", "Name", "Value" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2023, 12, 12, 13, 47, 21, 254, DateTimeKind.Local).AddTicks(418), false, "Granite", "nobis" },
-                    { 2, 4, new DateTime(2023, 12, 12, 13, 47, 21, 254, DateTimeKind.Local).AddTicks(519), true, "Steel", "tempora" },
-                    { 3, 3, new DateTime(2023, 12, 12, 13, 47, 21, 254, DateTimeKind.Local).AddTicks(534), false, "Metal", "quia" }
+                    { 1, 1, new DateTime(2023, 12, 12, 15, 45, 19, 153, DateTimeKind.Local).AddTicks(3243), false, "Battery Life", "60 Hours" },
+                    { 2, 4, new DateTime(2023, 12, 12, 15, 45, 19, 153, DateTimeKind.Local).AddTicks(3314), true, "Ram", "60" },
+                    { 3, 3, new DateTime(2023, 12, 12, 15, 45, 19, 153, DateTimeKind.Local).AddTicks(3319), false, "Material", "velit" }
                 });
 
             migrationBuilder.CreateIndex(

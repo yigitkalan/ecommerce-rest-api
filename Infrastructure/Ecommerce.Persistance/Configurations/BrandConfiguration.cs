@@ -16,7 +16,7 @@ public class BrandConfiguration : IEntityTypeConfiguration<Brand>
         Brand brand1 = new()
         {
             Id = 1,
-            Name = faker.Company.ToString(),
+            Name = faker.Company.CompanyName(),
             CreatedTime = DateTime.Now,
             IsDeleted = false
         };
@@ -24,7 +24,7 @@ public class BrandConfiguration : IEntityTypeConfiguration<Brand>
         Brand brand2 = new()
         {
             Id = 2,
-            Name = faker.Company.ToString(),
+            Name = faker.Company.CompanyName(),
             CreatedTime = DateTime.Now,
             IsDeleted = false
         };
@@ -32,7 +32,7 @@ public class BrandConfiguration : IEntityTypeConfiguration<Brand>
         Brand brand3 = new()
         {
             Id = 3,
-            Name = faker.Company.ToString(),
+            Name = faker.Company.CompanyName(),
             CreatedTime = DateTime.Now,
             IsDeleted = false
         };

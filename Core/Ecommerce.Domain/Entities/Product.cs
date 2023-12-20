@@ -10,5 +10,6 @@
         public decimal Discount { get; set; }
         public ICollection<Category> Categories { get; set; }
 
+        public Product() { }
     }
 }

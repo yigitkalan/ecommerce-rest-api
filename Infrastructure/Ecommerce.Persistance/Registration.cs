@@ -16,6 +16,7 @@ public static class Registration
         //since repositores are generic we can use type of to register them,
         // so when we encounter an an instance of IReadRepository<T> we know what to inject
         services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
+        services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
     }
 
 

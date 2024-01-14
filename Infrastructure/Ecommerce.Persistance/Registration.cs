@@ -1,4 +1,5 @@
-﻿using Ecommerce.Application.Interfaces.Repositories;
+﻿using Ecommerce.Application;
+using Ecommerce.Application.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +18,7 @@ public static class Registration
         // so when we encounter an an instance of IReadRepository<T> we know what to inject
         services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
         services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
+        services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
     }
 
 

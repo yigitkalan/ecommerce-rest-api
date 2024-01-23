@@ -1,3 +1,4 @@
+using Ecommerce.Application;
 using Ecommerce.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,8 @@ builder.Configuration
     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
 builder.Services.AddPersistance(builder.Configuration);
+builder.Services.AddApplication();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -21,5 +24,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseAuthorization();
 app.UseHttpsRedirection();
+app.MapControllers();
 app.Run();

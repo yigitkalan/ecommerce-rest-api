@@ -1,5 +1,5 @@
 ﻿using Bogus;
-using Ecommerce.Domain;
+using Ecommerce.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

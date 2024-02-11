@@ -1,6 +1,5 @@
-﻿using Ecommerce.Domain;
-
-namespace Ecommerce.Domain
+﻿
+namespace Ecommerce.Domain.Entities
 {
     public class Category : EntityBase
     {

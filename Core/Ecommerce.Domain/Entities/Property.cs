@@ -1,4 +1,4 @@
-﻿namespace Ecommerce.Domain
+﻿namespace Ecommerce.Domain.Entities
 {
     public class Property : EntityBase
     {

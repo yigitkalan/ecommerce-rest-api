@@ -1,7 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Ecommerce.Application;
+namespace Ecommerce.Application.Features;
 
 [Route("api/[controller]/[action]")]
 [ApiController]

@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using Ecommerce.Domain;
+using Ecommerce.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Persistance;

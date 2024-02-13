@@ -18,7 +18,7 @@ public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQueryReq
 
     public async Task<IList<GetAllProductsQueryResponse>> Handle(GetAllProductsQueryRequest request, CancellationToken cancellationToken)
     {
-        var products = await unityOfWork.GetReadRepository<Product>().GetAllAsync(include: q => q.Include(x => x.Brand));
+        var products = await unityOfWork.GetReadRepository<Product>().GetAllAsync(include: q => q.Include(x => x.Brand), predicate: x => !x.IsDeleted);
         //by doing this we are adding mapping configuration for brand and branddto via the Config method
         mapper.Config<BrandDto, Brand>();
         var map = mapper.Map<GetAllProductsQueryResponse, Product>(products);

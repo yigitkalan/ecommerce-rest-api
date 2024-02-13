@@ -26,7 +26,7 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandR
         // no relationship with the database. When you attempt to add a new product object that is based on 
         // one of these detached entities, EF cannot identify or associate it with any existing database entity.
         // so it will try to insert a new record into the database, which will result in a primary key violation.
-        var categories = await unitOfWork.GetReadRepository<Category>().GetAllAsync(predicate: c => request.CategoryIds.Contains(c.Id), enableTracking: true);
+        var categories = await unitOfWork.GetReadRepository<Category>().GetAllAsync(predicate: c => !c.IsDeleted && request.CategoryIds.Contains(c.Id) , enableTracking: true);
 
         foreach (var category in categories)
         {

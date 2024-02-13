@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.Persistance.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240213142237_InitialCreate")]
+    [Migration("20240213193443_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -60,23 +60,23 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 376, DateTimeKind.Local).AddTicks(6341),
+                            CreatedTime = new DateTime(2024, 2, 13, 22, 34, 43, 290, DateTimeKind.Local).AddTicks(9720),
                             IsDeleted = false,
-                            Name = "Denesik - Macejkovic"
+                            Name = "Cronin, Bashirian and Greenholt"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 376, DateTimeKind.Local).AddTicks(6414),
+                            CreatedTime = new DateTime(2024, 2, 13, 22, 34, 43, 290, DateTimeKind.Local).AddTicks(9890),
                             IsDeleted = false,
-                            Name = "Medhurst - Morissette"
+                            Name = "Schimmel - Durgan"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 376, DateTimeKind.Local).AddTicks(8149),
+                            CreatedTime = new DateTime(2024, 2, 13, 22, 34, 43, 291, DateTimeKind.Local).AddTicks(5984),
                             IsDeleted = false,
-                            Name = "Weissnat LLC"
+                            Name = "Hodkiewicz Group"
                         });
                 });
 
@@ -110,7 +110,7 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1713),
+                            CreatedTime = new DateTime(2024, 2, 13, 22, 34, 43, 291, DateTimeKind.Local).AddTicks(9805),
                             IsDeleted = false,
                             Name = "Electronics",
                             ParentId = 0,
@@ -119,7 +119,7 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1723),
+                            CreatedTime = new DateTime(2024, 2, 13, 22, 34, 43, 291, DateTimeKind.Local).AddTicks(9815),
                             IsDeleted = false,
                             Name = "Fashion",
                             ParentId = 0,
@@ -128,7 +128,7 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1718),
+                            CreatedTime = new DateTime(2024, 2, 13, 22, 34, 43, 291, DateTimeKind.Local).AddTicks(9811),
                             IsDeleted = false,
                             Name = "Computer",
                             ParentId = 1,
@@ -137,7 +137,7 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1726),
+                            CreatedTime = new DateTime(2024, 2, 13, 22, 34, 43, 291, DateTimeKind.Local).AddTicks(9819),
                             IsDeleted = false,
                             Name = "Women",
                             ParentId = 3,
@@ -185,23 +185,23 @@ namespace Ecommerce.Persistance.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 379, DateTimeKind.Local).AddTicks(3427),
-                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-                            Discount = 7.29878812965780m,
+                            CreatedTime = new DateTime(2024, 2, 13, 22, 34, 43, 294, DateTimeKind.Local).AddTicks(2144),
+                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+                            Discount = 12.799699778326580m,
                             IsDeleted = false,
-                            Price = 629.390902304181700m,
-                            Title = "Rustic Wooden Hat"
+                            Price = 476.511025134401200m,
+                            Title = "Gorgeous Frozen Chips"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 3,
-                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 379, DateTimeKind.Local).AddTicks(3496),
-                            Description = "The Football Is Good For Training And Recreational Purposes",
-                            Discount = 13.96548719174280m,
+                            CreatedTime = new DateTime(2024, 2, 13, 22, 34, 43, 294, DateTimeKind.Local).AddTicks(2176),
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Discount = 12.652323462822840m,
                             IsDeleted = false,
-                            Price = 551.143629509047300m,
-                            Title = "Ergonomic Concrete Chips"
+                            Price = 337.701892179986200m,
+                            Title = "Licensed Frozen Chips"
                         });
                 });
 
@@ -239,28 +239,28 @@ namespace Ecommerce.Persistance.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 381, DateTimeKind.Local).AddTicks(4631),
+                            CreatedTime = new DateTime(2024, 2, 13, 22, 34, 43, 296, DateTimeKind.Local).AddTicks(2899),
                             IsDeleted = false,
                             Name = "Battery Life",
-                            Value = "26 Hours"
+                            Value = "24 Hours"
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 4,
-                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 381, DateTimeKind.Local).AddTicks(4676),
+                            CreatedTime = new DateTime(2024, 2, 13, 22, 34, 43, 296, DateTimeKind.Local).AddTicks(2949),
                             IsDeleted = true,
                             Name = "Ram",
-                            Value = "2"
+                            Value = "44"
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 3,
-                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 381, DateTimeKind.Local).AddTicks(4682),
+                            CreatedTime = new DateTime(2024, 2, 13, 22, 34, 43, 296, DateTimeKind.Local).AddTicks(2954),
                             IsDeleted = false,
                             Name = "Material",
-                            Value = "quas"
+                            Value = "non"
                         });
                 });
 

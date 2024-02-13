@@ -8,15 +8,12 @@
         public Brand Brand { get; set; }
         public decimal Price { get; set; }
         public decimal Discount { get; set; }
-        public ICollection<Category> Categories { get; set; }
+        public ICollection<Category> Categories { get; set; } = new List<Category>();
 
-        public Product() {
-            Categories = new List<Category>();
-         }
+        public Product() { }
 
         public Product(string title, string description, int brandId, decimal price, decimal discount)
         {
-            Categories = new List<Category>();
             Title = title;
             Description = description;
             BrandId = brandId;

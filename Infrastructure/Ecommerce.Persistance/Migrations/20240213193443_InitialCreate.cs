@@ -122,9 +122,9 @@ namespace Ecommerce.Persistance.Migrations
                 columns: new[] { "Id", "CreatedTime", "IsDeleted", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 2, 13, 17, 22, 37, 376, DateTimeKind.Local).AddTicks(6341), false, "Denesik - Macejkovic" },
-                    { 2, new DateTime(2024, 2, 13, 17, 22, 37, 376, DateTimeKind.Local).AddTicks(6414), false, "Medhurst - Morissette" },
-                    { 3, new DateTime(2024, 2, 13, 17, 22, 37, 376, DateTimeKind.Local).AddTicks(8149), false, "Weissnat LLC" }
+                    { 1, new DateTime(2024, 2, 13, 22, 34, 43, 290, DateTimeKind.Local).AddTicks(9720), false, "Cronin, Bashirian and Greenholt" },
+                    { 2, new DateTime(2024, 2, 13, 22, 34, 43, 290, DateTimeKind.Local).AddTicks(9890), false, "Schimmel - Durgan" },
+                    { 3, new DateTime(2024, 2, 13, 22, 34, 43, 291, DateTimeKind.Local).AddTicks(5984), false, "Hodkiewicz Group" }
                 });
 
             migrationBuilder.InsertData(
@@ -132,10 +132,10 @@ namespace Ecommerce.Persistance.Migrations
                 columns: new[] { "Id", "CreatedTime", "IsDeleted", "Name", "ParentId", "Priority" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1713), false, "Electronics", 0, 1 },
-                    { 2, new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1718), false, "Computer", 1, 1 },
-                    { 3, new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1723), false, "Fashion", 0, 2 },
-                    { 4, new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1726), false, "Women", 3, 1 }
+                    { 1, new DateTime(2024, 2, 13, 22, 34, 43, 291, DateTimeKind.Local).AddTicks(9805), false, "Electronics", 0, 1 },
+                    { 2, new DateTime(2024, 2, 13, 22, 34, 43, 291, DateTimeKind.Local).AddTicks(9811), false, "Computer", 1, 1 },
+                    { 3, new DateTime(2024, 2, 13, 22, 34, 43, 291, DateTimeKind.Local).AddTicks(9815), false, "Fashion", 0, 2 },
+                    { 4, new DateTime(2024, 2, 13, 22, 34, 43, 291, DateTimeKind.Local).AddTicks(9819), false, "Women", 3, 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -143,8 +143,8 @@ namespace Ecommerce.Persistance.Migrations
                 columns: new[] { "Id", "BrandId", "CreatedTime", "Description", "Discount", "IsDeleted", "Price", "Title" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2024, 2, 13, 17, 22, 37, 379, DateTimeKind.Local).AddTicks(3427), "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016", 7.29878812965780m, false, 629.390902304181700m, "Rustic Wooden Hat" },
-                    { 2, 3, new DateTime(2024, 2, 13, 17, 22, 37, 379, DateTimeKind.Local).AddTicks(3496), "The Football Is Good For Training And Recreational Purposes", 13.96548719174280m, false, 551.143629509047300m, "Ergonomic Concrete Chips" }
+                    { 1, 1, new DateTime(2024, 2, 13, 22, 34, 43, 294, DateTimeKind.Local).AddTicks(2144), "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality", 12.799699778326580m, false, 476.511025134401200m, "Gorgeous Frozen Chips" },
+                    { 2, 3, new DateTime(2024, 2, 13, 22, 34, 43, 294, DateTimeKind.Local).AddTicks(2176), "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart", 12.652323462822840m, false, 337.701892179986200m, "Licensed Frozen Chips" }
                 });
 
             migrationBuilder.InsertData(
@@ -152,9 +152,9 @@ namespace Ecommerce.Persistance.Migrations
                 columns: new[] { "Id", "CategoryId", "CreatedTime", "IsDeleted", "Name", "Value" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2024, 2, 13, 17, 22, 37, 381, DateTimeKind.Local).AddTicks(4631), false, "Battery Life", "26 Hours" },
-                    { 2, 4, new DateTime(2024, 2, 13, 17, 22, 37, 381, DateTimeKind.Local).AddTicks(4676), true, "Ram", "2" },
-                    { 3, 3, new DateTime(2024, 2, 13, 17, 22, 37, 381, DateTimeKind.Local).AddTicks(4682), false, "Material", "quas" }
+                    { 1, 1, new DateTime(2024, 2, 13, 22, 34, 43, 296, DateTimeKind.Local).AddTicks(2899), false, "Battery Life", "24 Hours" },
+                    { 2, 4, new DateTime(2024, 2, 13, 22, 34, 43, 296, DateTimeKind.Local).AddTicks(2949), true, "Ram", "44" },
+                    { 3, 3, new DateTime(2024, 2, 13, 22, 34, 43, 296, DateTimeKind.Local).AddTicks(2954), false, "Material", "non" }
                 });
 
             migrationBuilder.CreateIndex(

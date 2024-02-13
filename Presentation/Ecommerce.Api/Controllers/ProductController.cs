@@ -22,4 +22,11 @@ public class ProductController : ControllerBase
 
     }
 
+    [HttpPost]
+    public async Task<IActionResult> CreateProduct([FromBody] CreateProductCommandRequest request)
+    {
+        await Mediator.Send(request);
+        return Ok();
+    }
+
 }

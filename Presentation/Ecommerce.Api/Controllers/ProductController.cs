@@ -29,4 +29,20 @@ public class ProductController : ControllerBase
         return Ok();
     }
 
+    [HttpPut]
+    public async Task<IActionResult> UpdateProduct([FromBody] UpdateProductCommandRequest request)
+    {
+        await Mediator.Send(request);
+        return Ok();
+    }
+
+    [HttpDelete]
+
+    public async Task<IActionResult> DeleteProduct([FromBody] DeleteProductCommandRequest request)
+    {
+        await Mediator.Send(request);
+        return Ok();
+    }
+
+    
 }

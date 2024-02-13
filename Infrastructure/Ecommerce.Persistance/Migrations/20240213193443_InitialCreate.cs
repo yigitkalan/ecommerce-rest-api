@@ -108,12 +108,14 @@ namespace Ecommerce.Persistance.Migrations
                         column: x => x.CategoriesId,
                         principalTable: "Categories",
                         principalColumn: "Id",
+                        onUpdate: ReferentialAction.SetNull,
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_CategoryProduct_Products_ProductsId",
                         column: x => x.ProductsId,
                         principalTable: "Products",
                         principalColumn: "Id",
+                        // onUpdate: ReferentialAction.SetNull,
                         onDelete: ReferentialAction.Cascade);
                 });
 

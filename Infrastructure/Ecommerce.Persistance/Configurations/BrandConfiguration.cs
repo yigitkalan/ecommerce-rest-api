@@ -10,6 +10,12 @@ public class BrandConfiguration : IEntityTypeConfiguration<Brand>
     public void Configure(EntityTypeBuilder<Brand> builder)
     {
         builder.Property(x => x.Name).HasMaxLength(256);
+
+        builder.HasMany(b => b.Products)
+        .WithOne(p => p.Brand)
+        .HasForeignKey(p => p.BrandId);
+
+
         Faker faker = new("en");
 
         Brand brand1 = new()
@@ -35,6 +41,6 @@ public class BrandConfiguration : IEntityTypeConfiguration<Brand>
             CreatedTime = DateTime.Now,
             IsDeleted = false
         };
-        builder.HasData(brand1, brand2,brand3);
+        builder.HasData(brand1, brand2, brand3);
     }
 }

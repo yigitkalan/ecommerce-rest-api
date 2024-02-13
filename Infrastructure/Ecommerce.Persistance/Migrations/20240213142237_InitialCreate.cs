@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Ecommerce.Persistance.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -122,9 +122,9 @@ namespace Ecommerce.Persistance.Migrations
                 columns: new[] { "Id", "CreatedTime", "IsDeleted", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(6075), false, "Yost Inc" },
-                    { 2, new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(6515), false, "Gerhold - Lang" },
-                    { 3, new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(6684), false, "King - Wisoky" }
+                    { 1, new DateTime(2024, 2, 13, 17, 22, 37, 376, DateTimeKind.Local).AddTicks(6341), false, "Denesik - Macejkovic" },
+                    { 2, new DateTime(2024, 2, 13, 17, 22, 37, 376, DateTimeKind.Local).AddTicks(6414), false, "Medhurst - Morissette" },
+                    { 3, new DateTime(2024, 2, 13, 17, 22, 37, 376, DateTimeKind.Local).AddTicks(8149), false, "Weissnat LLC" }
                 });
 
             migrationBuilder.InsertData(
@@ -132,10 +132,10 @@ namespace Ecommerce.Persistance.Migrations
                 columns: new[] { "Id", "CreatedTime", "IsDeleted", "Name", "ParentId", "Priority" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9122), false, "Electronics", 0, 1 },
-                    { 2, new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9127), false, "Computer", 1, 1 },
-                    { 3, new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9131), false, "Fashion", 0, 2 },
-                    { 4, new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9135), false, "Women", 3, 1 }
+                    { 1, new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1713), false, "Electronics", 0, 1 },
+                    { 2, new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1718), false, "Computer", 1, 1 },
+                    { 3, new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1723), false, "Fashion", 0, 2 },
+                    { 4, new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1726), false, "Women", 3, 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -143,8 +143,8 @@ namespace Ecommerce.Persistance.Migrations
                 columns: new[] { "Id", "BrandId", "CreatedTime", "Description", "Discount", "IsDeleted", "Price", "Title" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2023, 12, 12, 15, 45, 19, 151, DateTimeKind.Local).AddTicks(1566), "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support", 18.412722498041440m, false, 226.403504889305500m, "Practical Soft Shirt" },
-                    { 2, 3, new DateTime(2023, 12, 12, 15, 45, 19, 151, DateTimeKind.Local).AddTicks(1597), "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients", 12.195370521915780m, false, 520.22360722191400m, "Rustic Concrete Chair" }
+                    { 1, 1, new DateTime(2024, 2, 13, 17, 22, 37, 379, DateTimeKind.Local).AddTicks(3427), "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016", 7.29878812965780m, false, 629.390902304181700m, "Rustic Wooden Hat" },
+                    { 2, 3, new DateTime(2024, 2, 13, 17, 22, 37, 379, DateTimeKind.Local).AddTicks(3496), "The Football Is Good For Training And Recreational Purposes", 13.96548719174280m, false, 551.143629509047300m, "Ergonomic Concrete Chips" }
                 });
 
             migrationBuilder.InsertData(
@@ -152,9 +152,9 @@ namespace Ecommerce.Persistance.Migrations
                 columns: new[] { "Id", "CategoryId", "CreatedTime", "IsDeleted", "Name", "Value" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2023, 12, 12, 15, 45, 19, 153, DateTimeKind.Local).AddTicks(3243), false, "Battery Life", "60 Hours" },
-                    { 2, 4, new DateTime(2023, 12, 12, 15, 45, 19, 153, DateTimeKind.Local).AddTicks(3314), true, "Ram", "60" },
-                    { 3, 3, new DateTime(2023, 12, 12, 15, 45, 19, 153, DateTimeKind.Local).AddTicks(3319), false, "Material", "velit" }
+                    { 1, 1, new DateTime(2024, 2, 13, 17, 22, 37, 381, DateTimeKind.Local).AddTicks(4631), false, "Battery Life", "26 Hours" },
+                    { 2, 4, new DateTime(2024, 2, 13, 17, 22, 37, 381, DateTimeKind.Local).AddTicks(4676), true, "Ram", "2" },
+                    { 3, 3, new DateTime(2024, 2, 13, 17, 22, 37, 381, DateTimeKind.Local).AddTicks(4682), false, "Material", "quas" }
                 });
 
             migrationBuilder.CreateIndex(

@@ -8,6 +8,11 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
 {
     public void Configure(EntityTypeBuilder<Category> builder)
     {
+
+        builder.HasMany(c => c.Properties)
+        .WithOne(p => p.Category);
+
+
         Category category1 = new()
         {
             Id = 1,

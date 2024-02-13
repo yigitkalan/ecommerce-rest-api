@@ -32,7 +32,7 @@ namespace Ecommerce.Persistance.Migrations
                     b.ToTable("CategoryProduct");
                 });
 
-            modelBuilder.Entity("Ecommerce.Domain.Brand", b =>
+            modelBuilder.Entity("Ecommerce.Domain.Entities.Brand", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -57,27 +57,27 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(6075),
+                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 376, DateTimeKind.Local).AddTicks(6341),
                             IsDeleted = false,
-                            Name = "Yost Inc"
+                            Name = "Denesik - Macejkovic"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(6515),
+                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 376, DateTimeKind.Local).AddTicks(6414),
                             IsDeleted = false,
-                            Name = "Gerhold - Lang"
+                            Name = "Medhurst - Morissette"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(6684),
+                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 376, DateTimeKind.Local).AddTicks(8149),
                             IsDeleted = false,
-                            Name = "King - Wisoky"
+                            Name = "Weissnat LLC"
                         });
                 });
 
-            modelBuilder.Entity("Ecommerce.Domain.Category", b =>
+            modelBuilder.Entity("Ecommerce.Domain.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -107,7 +107,7 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9122),
+                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1713),
                             IsDeleted = false,
                             Name = "Electronics",
                             ParentId = 0,
@@ -116,7 +116,7 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9131),
+                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1723),
                             IsDeleted = false,
                             Name = "Fashion",
                             ParentId = 0,
@@ -125,7 +125,7 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9127),
+                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1718),
                             IsDeleted = false,
                             Name = "Computer",
                             ParentId = 1,
@@ -134,7 +134,7 @@ namespace Ecommerce.Persistance.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 148, DateTimeKind.Local).AddTicks(9135),
+                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 377, DateTimeKind.Local).AddTicks(1726),
                             IsDeleted = false,
                             Name = "Women",
                             ParentId = 3,
@@ -142,7 +142,7 @@ namespace Ecommerce.Persistance.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Ecommerce.Domain.Product", b =>
+            modelBuilder.Entity("Ecommerce.Domain.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -182,27 +182,27 @@ namespace Ecommerce.Persistance.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 151, DateTimeKind.Local).AddTicks(1566),
-                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-                            Discount = 18.412722498041440m,
+                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 379, DateTimeKind.Local).AddTicks(3427),
+                            Description = "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+                            Discount = 7.29878812965780m,
                             IsDeleted = false,
-                            Price = 226.403504889305500m,
-                            Title = "Practical Soft Shirt"
+                            Price = 629.390902304181700m,
+                            Title = "Rustic Wooden Hat"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 3,
-                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 151, DateTimeKind.Local).AddTicks(1597),
-                            Description = "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-                            Discount = 12.195370521915780m,
+                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 379, DateTimeKind.Local).AddTicks(3496),
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Discount = 13.96548719174280m,
                             IsDeleted = false,
-                            Price = 520.22360722191400m,
-                            Title = "Rustic Concrete Chair"
+                            Price = 551.143629509047300m,
+                            Title = "Ergonomic Concrete Chips"
                         });
                 });
 
-            modelBuilder.Entity("Ecommerce.Domain.Property", b =>
+            modelBuilder.Entity("Ecommerce.Domain.Entities.Property", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -236,50 +236,50 @@ namespace Ecommerce.Persistance.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 153, DateTimeKind.Local).AddTicks(3243),
+                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 381, DateTimeKind.Local).AddTicks(4631),
                             IsDeleted = false,
                             Name = "Battery Life",
-                            Value = "60 Hours"
+                            Value = "26 Hours"
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 4,
-                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 153, DateTimeKind.Local).AddTicks(3314),
+                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 381, DateTimeKind.Local).AddTicks(4676),
                             IsDeleted = true,
                             Name = "Ram",
-                            Value = "60"
+                            Value = "2"
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 3,
-                            CreatedTime = new DateTime(2023, 12, 12, 15, 45, 19, 153, DateTimeKind.Local).AddTicks(3319),
+                            CreatedTime = new DateTime(2024, 2, 13, 17, 22, 37, 381, DateTimeKind.Local).AddTicks(4682),
                             IsDeleted = false,
                             Name = "Material",
-                            Value = "velit"
+                            Value = "quas"
                         });
                 });
 
             modelBuilder.Entity("CategoryProduct", b =>
                 {
-                    b.HasOne("Ecommerce.Domain.Category", null)
+                    b.HasOne("Ecommerce.Domain.Entities.Category", null)
                         .WithMany()
                         .HasForeignKey("CategoriesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Ecommerce.Domain.Product", null)
+                    b.HasOne("Ecommerce.Domain.Entities.Product", null)
                         .WithMany()
                         .HasForeignKey("ProductsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Ecommerce.Domain.Product", b =>
+            modelBuilder.Entity("Ecommerce.Domain.Entities.Product", b =>
                 {
-                    b.HasOne("Ecommerce.Domain.Brand", "Brand")
-                        .WithMany()
+                    b.HasOne("Ecommerce.Domain.Entities.Brand", "Brand")
+                        .WithMany("Products")
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -287,10 +287,10 @@ namespace Ecommerce.Persistance.Migrations
                     b.Navigation("Brand");
                 });
 
-            modelBuilder.Entity("Ecommerce.Domain.Property", b =>
+            modelBuilder.Entity("Ecommerce.Domain.Entities.Property", b =>
                 {
-                    b.HasOne("Ecommerce.Domain.Category", "Category")
-                        .WithMany("Details")
+                    b.HasOne("Ecommerce.Domain.Entities.Category", "Category")
+                        .WithMany("Properties")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -298,9 +298,14 @@ namespace Ecommerce.Persistance.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("Ecommerce.Domain.Category", b =>
+            modelBuilder.Entity("Ecommerce.Domain.Entities.Brand", b =>
                 {
-                    b.Navigation("Details");
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("Ecommerce.Domain.Entities.Category", b =>
+                {
+                    b.Navigation("Properties");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,6 +1,7 @@
 using Ecommerce.Application;
 using Ecommerce.Persistance;
 using Ecommerce.Mapper;
+using Ecommerce.Application.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,8 @@ builder.Services.AddCustomMapper();
 builder.Services.AddControllers();
 
 var app = builder.Build();
+
+app.ConfigureExceptionHandlingMiddleware();
 
 if (app.Environment.IsDevelopment())
 {

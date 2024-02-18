@@ -1,5 +1,6 @@
 using Ecommerce.Domain.Entities;
 using MediatR;
+using Namespace;
 
 namespace Ecommerce.Application.Features;
 
@@ -7,14 +8,19 @@ namespace Ecommerce.Application.Features;
 public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest,Unit>
 {
     private IUnitOfWork unitOfWork;
+    private ProductRules productRules;
 
-    public CreateProductCommandHandler(IUnitOfWork unitOfWork)
+    public CreateProductCommandHandler(IUnitOfWork unitOfWork, ProductRules productRules)
     {
         this.unitOfWork = unitOfWork;
+        this.productRules = productRules;
 
     }
     public async Task<Unit> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
     {
+        var products = await unitOfWork.GetReadRepository<Product>().GetAllAsync();
+        await productRules.ProductTitleMustBeUnique(products, request.Title);
+
         Product product = new Product(request.Title, request.Description, request.BrandId, request.Price, request.Discount);
 
         await unitOfWork.GetWriteRepository<Product>().AddAsync(product);

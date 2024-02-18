@@ -1,7 +1,7 @@
 using MediatR;
 
 namespace Ecommerce.Application.Features;
-public class UpdateProductCommandRequest: IRequest
+public class UpdateProductCommandRequest: IRequest<Unit>
 {
     public int Id { get; set; }
     public string Title { get; set; }

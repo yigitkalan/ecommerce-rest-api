@@ -2,7 +2,7 @@ using Ecommerce.Domain.Entities;
 using MediatR;
 
 namespace Ecommerce.Application.Features;
-public class CreateProductCommandRequest : IRequest
+public class CreateProductCommandRequest : IRequest<Unit>
 {
 
     public string Title { get; set; }

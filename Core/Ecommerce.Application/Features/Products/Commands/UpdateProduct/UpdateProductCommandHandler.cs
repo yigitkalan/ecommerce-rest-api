@@ -3,7 +3,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Application.Features;
-public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest>
+public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest, Unit>
 {
     private IUnitOfWork unitOfWork;
     private IMapper mapper;
@@ -14,7 +14,7 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandR
         this.mapper = mapper;
 
     }
-    public async Task Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
     {
         var product = await unitOfWork.GetReadRepository<Product>().GetAsync(x => x.Id == request.Id, enableTracking: true, include : x => x.Include(p => p.Categories));
         foreach (var productCategory in product.Categories.ToList())
@@ -39,6 +39,8 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandR
 
         await unitOfWork.GetWriteRepository<Product>().UpdateAsync(product);
         await unitOfWork.SaveAsync();
+
+        return Unit.Value;
 
     }
 }

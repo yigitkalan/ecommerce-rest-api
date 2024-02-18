@@ -1,7 +1,6 @@
 using Ecommerce.Application;
 using Ecommerce.Persistance;
 using Ecommerce.Mapper;
-using Ecommerce.Application.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 

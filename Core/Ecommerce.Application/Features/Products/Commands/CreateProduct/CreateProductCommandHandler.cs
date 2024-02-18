@@ -2,7 +2,9 @@ using Ecommerce.Domain.Entities;
 using MediatR;
 
 namespace Ecommerce.Application.Features;
-public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest>
+
+// we need the response of some kind to be able to enter the validation behavior pipeline, so we use Unit
+public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest,Unit>
 {
     private IUnitOfWork unitOfWork;
 
@@ -11,7 +13,7 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandR
         this.unitOfWork = unitOfWork;
 
     }
-    public async Task Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
     {
         Product product = new Product(request.Title, request.Description, request.BrandId, request.Price, request.Discount);
 
@@ -35,5 +37,7 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandR
 
 
         var result = await unitOfWork.SaveAsync();
+
+        return Unit.Value;
     }
 }

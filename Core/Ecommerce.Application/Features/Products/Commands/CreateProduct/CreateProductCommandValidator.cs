@@ -13,18 +13,18 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
         .NotEmpty();
 
         RuleFor(p => p.BrandId) 
-        .NotEmpty()
         .GreaterThan(0);
 
         RuleFor(p => p.Price)
-        .NotEmpty().GreaterThan(0);
+        .GreaterThan(0);
 
         RuleFor(p => p.Discount)
         .GreaterThanOrEqualTo(0);
 
         RuleFor(p => p.CategoryIds)
         .NotEmpty()
-        .Must(categories => categories.Any());
+        .Must(categories => categories.Any() && categories.All(c => c > 0))
+        .WithMessage("At least one valid category must be selected");
 
     }
 

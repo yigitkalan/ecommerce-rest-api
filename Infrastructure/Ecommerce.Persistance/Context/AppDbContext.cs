@@ -1,10 +1,12 @@
 ﻿using System.Reflection;
+using Ecommerce.Domain;
 using Ecommerce.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Persistance;
 
-public class AppDbContext : DbContext
+public class AppDbContext : IdentityDbContext<User, Role, Guid>
 {
 
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)

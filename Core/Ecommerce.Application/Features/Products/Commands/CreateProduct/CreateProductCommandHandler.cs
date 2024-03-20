@@ -21,7 +21,7 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandR
         var products = await unitOfWork.GetReadRepository<Product>().GetAllAsync();
         await productRules.ProductTitleMustBeUnique(products, request.Title);
 
-        Product product = new Product(request.Title, request.Description, request.BrandId, request.Price, request.Discount);
+        Product product = new(request.Title, request.Description, request.BrandId, request.Price, request.Discount);
 
         await unitOfWork.GetWriteRepository<Product>().AddAsync(product);
         if(await unitOfWork.SaveAsync() == 0)

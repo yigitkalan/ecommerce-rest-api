@@ -1,5 +1,6 @@
 ﻿using Ecommerce.Application;
 using Ecommerce.Application.Interfaces.Repositories;
+using Ecommerce.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +20,16 @@ public static class Registration
         services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
         services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
         services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+
+        services.AddIdentityCore<User>( opt =>{
+            opt.Password.RequireNonAlphanumeric = false;
+            opt.Password.RequiredLength = 8;
+            opt.Password.RequireLowercase = false;
+            opt.Password.RequireUppercase = false;
+            opt.Password.RequireDigit = false;
+            opt.SignIn.RequireConfirmedEmail = false;
+
+        }).AddRoles<Role>().AddEntityFrameworkStores<AppDbContext>();
     }
 
 
